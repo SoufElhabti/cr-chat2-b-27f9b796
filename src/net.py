@@ -4,3 +4,7 @@ def parse_port(value: str) -> int:
     if not 0 < port < 65536:
         raise ValueError("port out of range")
     return port
+
+
+def parse_port_list(csv: str):
+    return [parse_port(p.strip()) for p in csv.split(",") if p.strip()]
